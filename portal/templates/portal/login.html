@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<style type="text/css">
+		form {
+  text-align: center;
+}
+
+	</style>
+</head>
+<body>
+		{% if messages %}
+			{% for msg in messages %}
+				<div class="alert alert-{{ msg.tag }}">{{msg}}</div>
+			{%endfor%}
+		{% endif %}
+		<form action ="{% url 'login' %}" method = 'POST'>
+					{% csrf_token %}
+					Mail ID : <input type='text' name ='emailId'><br>
+					Password : <input type= 'text' name = 'password'><br>
+			<input type="submit" name="submit" value="Submit">
+			</form>
+		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
